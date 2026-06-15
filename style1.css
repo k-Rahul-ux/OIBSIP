@@ -1,0 +1,30 @@
+body{
+font-family:Arial,sans-serif;
+margin:0;
+text-align:center;
+background:#fff8f0;
+}
+header{
+background:#8b4513;
+color:white;
+padding:20px;
+}
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+}
+.hero{
+padding:80px 20px;
+background:#f4c27a;
+}
+button{
+padding:12px 25px;
+border:none;
+background:#8b4513;
+color:white;
+cursor:pointer;
+}
+section{
+padding:40px;
+}
