@@ -1,40 +1,56 @@
-// Abhi Portfolio JavaScript
+function convertTemperature() {
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
+    let temp = parseFloat(document.getElementById("temperature").value);
+    let from = document.getElementById("fromUnit").value;
+    let to = document.getElementById("toUnit").value;
+    let result = document.getElementById("result");
 
-// Welcome message in console
-console.log("Welcome to Abhi's Portfolio");
-
-// Button interaction
-const button = document.querySelector('.btn');
-if (button) {
-    button.addEventListener('click', () => {
-        alert("Thanks for visiting Abhi's portfolio!");
-    });
-}
-
-// Simple typing effect
-const title = document.querySelector('.hero h3');
-const text = "Frontend Developer & Creative Designer";
-let index = 0;
-
-function typeEffect() {
-    if (index < text.length) {
-        title.textContent = text.substring(0, index + 1);
-        index++;
-        setTimeout(typeEffect, 80);
+    if (isNaN(temp)) {
+        result.innerHTML = "Please enter a valid temperature";
+        return;
     }
+
+    let convertedTemp;
+
+    if (from === to) {
+        convertedTemp = temp;
+    }
+
+    else if (from === "celsius") {
+
+        if (to === "fahrenheit")
+            convertedTemp = (temp * 9/5) + 32;
+        else
+            convertedTemp = temp + 273.15;
+    }
+
+    else if (from === "fahrenheit") {
+
+        if (to === "celsius")
+            convertedTemp = (temp - 32) * 5/9;
+        else
+            convertedTemp = ((temp - 32) * 5/9) + 273.15;
+    }
+
+    else if (from === "kelvin") {
+
+        if (to === "celsius")
+            convertedTemp = temp - 273.15;
+        else
+            convertedTemp = ((temp - 273.15) * 9/5) + 32;
+    }
+
+    result.innerHTML =
+        `Result: ${convertedTemp.toFixed(2)} ${getUnitSymbol(to)}`;
 }
 
-if (title) {
-    title.textContent = "";
-    typeEffect();
+function getUnitSymbol(unit) {
+
+    if (unit === "celsius")
+        return "°C";
+
+    if (unit === "fahrenheit")
+        return "°F";
+
+    return "K";
 }
