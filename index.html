@@ -1,40 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temperature Converter</title>
-    <link rel="stylesheet" href="style.css">
+<title>Taste Haven Restaurant</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<header>
+<h1>Taste Haven</h1>
+<nav>
+<a href="#">Home</a>
+<a href="#menu">Menu</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
 
-    <div class="container">
-        <h1>🌡 Temperature Converter</h1>
+<section class="hero">
+<h2>Delicious Food, Memorable Moments</h2>
+<p>Experience fresh dishes prepared with passion and premium ingredients.</p>
+<button onclick="order()">Book a Table</button>
+</section>
 
-        <input type="number" id="temperature" placeholder="Enter Temperature">
+<section id="menu">
+<h2>Our Menu</h2>
+<p>🍕 Pizza | 🍔 Burgers | 🍝 Pasta | 🍰 Desserts</p>
+</section>
 
-        <div class="selectors">
-            <select id="fromUnit">
-                <option value="celsius">Celsius</option>
-                <option value="fahrenheit">Fahrenheit</option>
-                <option value="kelvin">Kelvin</option>
-            </select>
+<section id="about">
+<h2>About Us</h2>
+<p>Taste Haven offers a comfortable dining experience with delicious cuisine and excellent service.</p>
+</section>
 
-            <span>→</span>
+<section id="contact">
+<h2>Contact</h2>
+<p>Email: tastehaven@example.com</p>
+<p>Phone: +91 98765 43210</p>
+</section>
 
-            <select id="toUnit">
-                <option value="fahrenheit">Fahrenheit</option>
-                <option value="celsius">Celsius</option>
-                <option value="kelvin">Kelvin</option>
-            </select>
-        </div>
-
-        <button onclick="convertTemperature()">Convert</button>
-
-        <div id="result">Result: --</div>
-    </div>
-
-    <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
